@@ -61,23 +61,10 @@
   </div>
 
   <!-- SCRIPTS en orden correcto -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vanta@0.5.21/dist/vanta.waves.min.js"></script>
-  <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      VANTA.FOG({
-        el: "#vanta-bg",
-        mouseControls: true,
-        touchControls: true,
-        gyroControls: false,
-        minHeight: 200.00,
-        minWidth: 200.00,
-        highlightColor: 0x000000,
-        midtoneColor: 0x5c5c5c,
-        lowlightColor: 0xafafaf,
-        baseColor: 0x000000
-      });
-    });
-  </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.waves.min.js"></script>
+<script>
+  VANTA.WAVES('#my-background')
+</script>
 </body>
 </html>
