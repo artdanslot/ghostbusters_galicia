@@ -69,23 +69,19 @@
 
   <!-- Vanta and Three.js scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.waves.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.fog.min.js"></script>
   <script>
-    VANTA.WAVES({
+    VANTA.FOG({
       el: "#vanta-bg",
-      mouseControls: true,
-      touchControls: true,
-      gyroControls: false,
-      minHeight: 200.00,
-      minWidth: 200.00,
-      scale: 1.00,
-      scaleMobile: 1.00,
-      color: 0x111111,
-      shininess: 50.0,
-      waveHeight: 20.0,
-      waveSpeed: 1.0,
-      zoom: 0.85
+  mouseControls: true,
+  touchControls: true,
+  gyroControls: false,
+  minHeight: 200.00,
+  minWidth: 200.00,
+  highlightColor: 0x0,
+  midtoneColor: 0x575757,
+  lowlightColor: 0x5f5f5f,
+  baseColor: 0x0
     })
-  </script>
 </body>
 </html>
