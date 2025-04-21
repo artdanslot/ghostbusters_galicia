@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Coming Soon</title>
   <style>
     html, body {
@@ -10,21 +10,21 @@
       padding: 0;
       height: 100%;
       background: #000;
-      overflow: hidden;
       font-family: Arial, sans-serif;
     }
 
     #vanta-bg {
       width: 100%;
       height: 100%;
-    }
-
-    .overlay {
       position: absolute;
       top: 0;
       left: 0;
+      z-index: 0;
+    }
+
+    .content {
+      position: relative;
       z-index: 1;
-      width: 100%;
       height: 100%;
       display: flex;
       flex-direction: column;
@@ -36,53 +36,97 @@
       box-sizing: border-box;
     }
 
-    .overlay img {
+    .content img {
       max-width: 80%;
       height: auto;
       max-height: 300px;
     }
 
-    .overlay h1 {
+    .content h1 {
       margin-top: 20px;
       font-size: 1.5rem;
+      display: inline-block;
+      opacity: 0;
+      animation: fadeIn 8s ease-in-out forwards;
+      animation-delay: 1s;
+    }
+
+    .content h1 span {
+      opacity: 0;
+      display: inline-block;
+      animation: fadeInText 8s ease-in-out forwards;
+      animation-delay: calc(1s + 0.2s * var(--letter-index));
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeInText {
+      to {
+        opacity: 1;
+      }
     }
 
     @media (min-width: 768px) {
-      .overlay img {
+      .content img {
         max-width: 300px;
         max-height: 400px;
       }
 
-      .overlay h1 {
+      .content h1 {
         font-size: 2rem;
       }
     }
   </style>
 </head>
 <body>
-  <div id="vanta-bg">
-    <div class="overlay">
-      <img src="logo.png" alt="Logo" />
-      <h1>Something is coming...</h1>
-    </div>
+  <div id="vanta-bg"></div>
+
+  <div class="content">
+    <img src="logo.png" alt="Logo" />
+    <h1>
+      <span style="--letter-index: 0;">S</span>
+      <span style="--letter-index: 1;">o</span>
+      <span style="--letter-index: 2;">m</span>
+      <span style="--letter-index: 3;">e</span>
+      <span style="--letter-index: 4;">t</span>
+      <span style="--letter-index: 5;">h</span>
+      <span style="--letter-index: 6;">i</span>
+      <span style="--letter-index: 7;">n</span>
+      <span style="--letter-index: 8;">g</span>
+      <span style="--letter-index: 9;"> </span>
+      <span style="--letter-index: 10;">i</span>
+      <span style="--letter-index: 11;">s</span>
+      <span style="--letter-index: 12;"> </span>
+      <span style="--letter-index: 13;">c</span>
+      <span style="--letter-index: 14;">o</span>
+      <span style="--letter-index: 15;">m</span>
+      <span style="--letter-index: 16;">i</span>
+      <span style="--letter-index: 17;">n</span>
+      <span style="--letter-index: 18;">g</span>
+      <span style="--letter-index: 19;">...</span>
+    </h1>
   </div>
 
-  <!-- Vanta and Three.js scripts -->
+  <!-- Vanta and Three.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.fog.min.js"></script>
   <script>
     VANTA.FOG({
       el: "#vanta-bg",
-  mouseControls: true,
-  touchControls: true,
-  gyroControls: false,
-  minHeight: 200.00,
-  minWidth: 200.00,
-  highlightColor: 0x0,
-  midtoneColor: 0x575757,
-  lowlightColor: 0x5f5f5f,
-  baseColor: 0x0
-    })
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      highlightColor: 0x0,
+      midtoneColor: 0x575757,
+      lowlightColor: 0x5f5f5f,
+      baseColor: 0x0
+    });
   </script>
 </body>
 </html>
